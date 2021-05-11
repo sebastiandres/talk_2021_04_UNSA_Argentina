@@ -1,11 +1,11 @@
 # HELP
 
 ## Crear el ambiente
-conda create -n template
+conda create -n UNSA
 
 # Instalar librerías
 Desde requirements:
-source activate template
+source activate UNSA
 conda install --file requirements.txt
 
 Uno a uno:
@@ -15,19 +15,22 @@ pip install pandas
 
 ## Generar un pdf con las slides
 Ejecutar
-jupyter nbconvert --to slides template.ipynb --post serve
+jupyter nbconvert --to slides UNSA.ipynb --post serve
 
 Abrir
-http://127.0.0.1:8000/template.slides.html
+http://127.0.0.1:8000/UNSA.slides.html
 
 Agregar "?print-pdf" al enlace
-http://127.0.0.1:8000/template.slides.html?print-pdf
+http://127.0.0.1:8000/UNSA.slides.html?print-pdf
+
+Do all:
+jupyter nbconvert --to slides UNSA.ipynb --post serve; open http://127.0.0.1:8000/UNSA.slides.html?print-pdf
 
 Guardar/Imprimir como PDF
 
 ## Borrar el ambiente
 conda deactivate
-conda env remove -n template
+conda env remove -n UNSA
 
 ## Mostrar todos los ambientes
 conda env list
